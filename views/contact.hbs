@@ -1,0 +1,106 @@
+<main role="main">
+
+  <div class="album py-2 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-3 project-sb">
+
+          <div>
+            <h2>Links</h2>
+            <div class="my-2">
+              <a href="#" class="btn btn-primary">Live Demo</a>
+            </div>
+
+            <div class="my-2">
+              <a href="{{project.githubUrl}}" class="btn btn-secondary">Github
+                Link</a>
+            </div>
+          </div>
+
+          <hr />
+
+          <div>
+            <h2>Tags</h2>
+            {{#each project.tags}}
+
+              <a href="#" class="badge badge-{{this.class}}">{{this.name}}</a>
+            {{/each}}
+          </div>
+
+          <hr />
+
+          <div>
+            <h2>Related Projects</h2>
+
+            {{#each project.relatedProjects}}
+              <div class="my-2">
+                <a href="/projects/{{this.link}}">{{this.name}}</a>
+              </div>
+
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active"><a
+                  href="/contact"
+                >Contact</a></li>
+            </ol>
+          </nav>
+
+          <h1>Contact Us</h1>
+          <p id="resp"></p>
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Name"
+                name="name"
+              />
+
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="mobile" class="form-label">Mobile</label>
+              <input
+                type="number"
+                class="form-control"
+                id="mobile"
+                name="mobile"
+                placeholder="Mobile"
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                name="desc"
+                class="form-control"
+                id="desc"
+                rows="3"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="/js/app.js"></script>
